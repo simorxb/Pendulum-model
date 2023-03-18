@@ -11,7 +11,7 @@ The parameters used are:
 
 m = 0.5 kg
 l = 1 m
-k = 0.5 Nm*s
+k = 0.5 Nm\*s
 g = 9.81 m/s^2
 
 The model was created to support a Linkedin post. Follow me on Linkedin! https://www.linkedin.com/in/simone-bertoni-control-eng/
@@ -31,21 +31,21 @@ Example: the model of a pendulum with viscous angular friction and a motor that 
 
 We can use Newton's second law for rotation - the sum of the torques equals the moment of inertia times the angular acceleration:
 
-sum(tau) = J*ddtheta
+sum(tau) = J\*ddtheta
 
 where ddtheta = angular acceleration.
 
-Because the object is forced to stay in a circular path, only the projection of the gravitational force (m*g*sin(theta)) on the tangential axis contributes to the torque, which becomes -m*g*l*sin(theta).
+Because the object is forced to stay in a circular path, only the projection of the gravitational force (m\*g\*sin(theta)) on the tangential axis contributes to the torque, which becomes -m\*g\*l\*sin(theta).
 
 Hence the equation:
 
-tau - m*g*l*sin(theta) - k*dtheta = J*ddtheta
+tau - m\*g\*l\*sin(theta) - k\*dtheta = J\*ddtheta
 
-where J = m*l^2 as the rod has no mass and the object is a point mass.
+where J = m\*l^2 as the rod has no mass and the object is a point mass.
 
 Solving for the highest level derivative (ddtheta):
 
-ddtheta = (tau - m*g*l*sin(theta) - k*dtheta) / (m*l^2)
+ddtheta = (tau - m\*g\*l\*sin(theta) - k\*dtheta) / (m\*l^2)
 
 Now the equation is ready to be implemented in Xcos / Simulink. Feeding ddtheta through two integrators will produce dtheta and theta, which will be used again in the calculation of ddtheta.
 
@@ -62,7 +62,7 @@ Values used:
 
 m = 0.5 kg
 l = 1 m
-k = 0.5 Nm*s
+k = 0.5 Nm\*s
 g = 9.81 m/s^2
 
 If you enjoyed this follow me for more tips on control and embedded software engineering.
